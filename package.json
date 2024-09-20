@@ -1,0 +1,6 @@
+{
+  "devDependencies": {
+    "gulp": "^5.0.0",
+    "gulp-sftp-up4": "^0.1.8"
+  }
+}
