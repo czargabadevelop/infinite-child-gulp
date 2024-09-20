@@ -43,3 +43,22 @@ jQuery(document).ready(function(){
 </script>
 <?php }        
 add_action('admin_footer', 'webhype_admin_footer_function');
+
+
+function my_child_theme_enqueue_assets() {
+    // Enqueue parent theme's styles
+    wp_enqueue_style('parent-theme-style', get_template_directory_uri() . '/style.css');
+
+    // Enqueue custom CSS file located in child theme's /asset/css/ directory
+    wp_enqueue_style('child-custom-style', get_stylesheet_directory_uri() . '/asset/css/style.css');
+
+    // Deregister default jQuery (optional, if you want to load a custom version)
+    wp_deregister_script('jquery');
+
+    // Enqueue custom jQuery and ensure it's loaded with WordPress dependencies
+    //wp_enqueue_script('jquery', 'https://code.jquery.com/jquery-3.6.0.min.js', array(), '3.6.0', true); // Optional, if you want to use an external version of jQuery
+    
+    // Enqueue custom JS file located in child theme's /asset/js/ directory
+    wp_enqueue_script('child-custom-js', get_stylesheet_directory_uri() . '/asset/js/app.js', array('jquery'), null, true);
+}
+add_action('wp_enqueue_scripts', 'my_child_theme_enqueue_assets');
