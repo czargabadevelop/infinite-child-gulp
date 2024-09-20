@@ -21,3 +21,4 @@ rad.json
 #Test results file
 TestResults.xml
 staging.json
+node_modules/
