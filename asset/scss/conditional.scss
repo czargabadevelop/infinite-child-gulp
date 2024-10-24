@@ -1,0 +1,36 @@
+// Breakpoints
+$desktop: 1000px;
+$tablet-max: 999px;
+$tablet-min: 768px;
+$mobile-max: 767px;
+
+// Desktop-only (1000px and above)
+@media (min-width: $desktop) {
+  .desktop-only {
+    display: block;
+  }
+  .tablet-only, .mobile-only {
+    display: none;
+  }
+}
+
+// Tablet-only (768px to 999px)
+@media (min-width: $tablet-min) and (max-width: $tablet-max) {
+  .tablet-only {
+    display: block;
+  }
+  .desktop-only, .mobile-only {
+    display: none;
+  }
+}
+
+// Mobile-only (767px and below)
+@media (max-width: $mobile-max) {
+  .mobile-only {
+    display: block;
+  }
+  .tablet-only, .desktop-only {
+    display: none;
+  }
+}
+

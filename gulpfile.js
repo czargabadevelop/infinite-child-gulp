@@ -6,6 +6,8 @@ const concat = require('gulp-concat');
 const cleanCSS = require('gulp-clean-css');
 
 const config = JSON.parse(fs.readFileSync('staging.json', 'utf8'));
+//"remotePath": "/path/to/remote/directory"
+///var/www/html/[clientfolder]/wp-content/themes/infinite-child -> this is the base in staging.json
 
 // Define the SCSS compile and minify task
 gulp.task('scss', function () {
@@ -15,7 +17,7 @@ gulp.task('scss', function () {
         .pipe(cleanCSS({ compatibility: 'ie8' })) // minify the CSS
         .pipe(gulp.dest('asset/css')); // output to the specified directory
 });
-
+//const config = JSON.parse(fs.readFileSync('staging.json', 'utf8'));
 // Define the deploy task
 gulp.task('deploy', function () {
     return gulp.src('asset/**/*.*') // specify the files to upload
@@ -23,7 +25,7 @@ gulp.task('deploy', function () {
             host: config.host,
             user: config.user,
             pass: config.pass,
-            remotePath: config.remotePath
+            remotePath: `${config.remotePath}/asset` //asset folder here
         }));
 });
 

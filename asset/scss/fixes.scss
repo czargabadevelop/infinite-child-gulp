@@ -1,0 +1,42 @@
+//line fixes
+.gdlr-core-pbf-wrapper{margin-top:-1px;}
+
+
+//remove title caption default italic
+.gdlr-core-title-item-caption-bottom .gdlr-core-title-item-caption {
+    font-style:normal;
+}
+
+// this is for the left and right content
+// .phone-container 
+// .gdlr-core-pbf-column {
+//     float: left;
+//     clear: none;
+// }
+
+footer{
+
+    @media only screen and (max-width:1000px){
+        margin-top:-1px;
+    }
+
+    .infinite-footer-column{
+        .infinite-widget{
+            .menu{
+                margin-bottom:0;
+                li{
+                    margin:0;
+                    padding:0;
+                    border:none;
+                    &:before{display:none;}
+                }
+            }
+            p{
+                margin-bottom:0;
+            }
+        }
+    }
+}
+
+
+//one line footer
