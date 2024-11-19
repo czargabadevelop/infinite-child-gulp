@@ -11,16 +11,16 @@ const config = JSON.parse(fs.readFileSync('staging.json', 'utf8'));
 
 // Define the SCSS compile and minify task
 gulp.task('scss', function () {
-    return gulp.src('asset/scss/*.scss') // specify the SCSS files to compile
+    return gulp.src('assets/scss/*.scss') // specify the SCSS files to compile
         .pipe(sass().on('error', sass.logError))
         .pipe(concat('style.css')) // concatenate into a single file
         .pipe(cleanCSS({ compatibility: 'ie8' })) // minify the CSS
-        .pipe(gulp.dest('asset/css')); // output to the specified directory
+        .pipe(gulp.dest('assets/css')); // output to the specified directory
 });
 //const config = JSON.parse(fs.readFileSync('staging.json', 'utf8'));
 // Define the deploy task
 gulp.task('deploy', function () {
-    return gulp.src('asset/**/*.*') // specify the files to upload
+    return gulp.src('assets/**/*.*') // specify the files to upload
         .pipe(sftp({
             host: config.host,
             user: config.user,
@@ -32,8 +32,8 @@ gulp.task('deploy', function () {
 // Define the watch task
 gulp.task('watch', function () {
     // Watch for changes in the /test directory and SCSS files
-    gulp.watch('asset/scss/*.scss', gulp.series('scss'));
-    gulp.watch('asset/**/*.*', gulp.series('deploy'));
+    gulp.watch('assets/scss/*.scss', gulp.series('scss'));
+    gulp.watch('assets/**/*.*', gulp.series('deploy'));
     
 });
 
