@@ -1,0 +1,65 @@
+/* For Desktop Fonts use Builder */
+
+@media only screen and (min-width: 768px) and (max-width: 1280px) {
+    /* Fonts Tab/Ipad*/
+
+    .title-1 {
+        text-align: center;
+        .gdlr-core-title-item-title {
+            font-size: 35px !important;
+            line-height: 45px !important;
+        }
+    }
+
+    .title-2 {
+        text-align: center;
+        .gdlr-core-title-item-title {
+            font-size: 30px !important;
+            line-height: 35px !important;
+        }
+    }
+
+    .title-3 {
+        text-align: center;
+        .gdlr-core-title-item-title {
+            font-size: 25px !important;
+            line-height: 30px !important;
+        }
+    }
+
+    .dl-title {
+        text-align: center;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    /* Fonts Mobile */
+
+    .title-1 {
+        text-align: center;
+        .gdlr-core-title-item-title {
+            font-size: 35px !important;
+            line-height: 45px !important;
+        }
+    }
+
+    .title-2 {
+        text-align: center;
+        .gdlr-core-title-item-title {
+            font-size: 30px !important;
+            line-height: 35px !important;
+        }
+    }
+
+    .title-3 {
+        text-align: center;
+        .gdlr-core-title-item-title {
+            font-size: 25px !important;
+            line-height: 30px !important    ;
+        }
+    }
+
+    .dl-title {
+        text-align: center;
+    }
+}
