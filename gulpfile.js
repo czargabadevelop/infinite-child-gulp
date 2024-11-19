@@ -25,7 +25,7 @@ gulp.task('deploy', function () {
             host: config.host,
             user: config.user,
             pass: config.pass,
-            remotePath: `${config.remotePath}/asset` //asset folder here
+            remotePath: `${config.remotePath}/assets` //asset folder here
         }));
 });
 
